@@ -2,8 +2,8 @@
   "short_name": "Library of koshelev",
   "name": "Personal library books of Koshelev Nikita",
   "icons": [
-    { "src": "/192.png", "type": "image/png", "sizes": "192x192" },
-    { "src": "/512.png", "type": "image/png", "sizes": "512x512" }
+    { "src": "/favicon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "/favicon-512.png", "type": "image/png", "sizes": "512x512" }
   ],
   "start_url": ".",
   "display": "standalone",
