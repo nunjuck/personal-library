@@ -3,7 +3,6 @@
 ## Settings commintlint
 
 <pre>
-<code>
 feat: {
   description: 'A new feature',
   title: 'Features',
@@ -63,5 +62,4 @@ revert: {
   title: 'Reverts',
   emoji: '🗑',
 },
-</code>
 </pre>
