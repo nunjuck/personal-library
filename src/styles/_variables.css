@@ -1,3 +1,8 @@
-root {
+:root {
+  /* Colors */
+  --color-bg-light: #C6D5DD;
+  --color-text-base: #333333;
+
+  /* Fonts */;
   --font-size-base: 16px
 }
