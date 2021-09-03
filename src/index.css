@@ -405,3 +405,38 @@ template {
     display: none
 }
   }
+/* Title */
+.title-page {
+  margin-top: 40px;
+  font-size: 2rem;
+  line-height: 1.3
+}
+@media (min-width: 768px) {
+.title-page {
+    font-size: 2.5rem;
+    line-height: 1.5;
+    margin-top: 140px
+}
+  }
+/* Catalog */
+.catalog__list {
+  padding: 0;
+  list-style-type: none;
+}
+.catalog__item:not(.catalog__item:last-child) {
+    margin-bottom: 0.5rem;
+  }
+@media(min-width: 768px) {
+.catalog__item {
+    display: inline-block;
+}
+
+    .catalog__item:not(.catalog__item:last-child) {
+      margin-bottom: 0rem;
+      margin-right: 1.5rem;
+    }
+  }
+.catalog__link {
+  color: var(--color-text-base);
+  text-decoration: none;
+}
