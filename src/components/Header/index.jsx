@@ -1,5 +1,5 @@
-import React from 'react'
-import Logo from '../Logo'
+import React from "react";
+import Logo from "../Logo";
 
 const Header = () => {
   return (
@@ -8,7 +8,7 @@ const Header = () => {
         <Logo />
       </header>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

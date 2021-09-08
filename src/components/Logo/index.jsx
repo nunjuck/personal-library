@@ -1,6 +1,6 @@
 import React from "react";
-import myAvatar1x from '../../images/my-avatar.png'
-import myAvatar2x from '../../images/my-avatar@2x.png'
+import myAvatar1x from "../../images/my-avatar.png";
+import myAvatar2x from "../../images/my-avatar@2x.png";
 
 const Logo = () => {
   return (
@@ -9,7 +9,7 @@ const Logo = () => {
         <picture>
           <img
             src={myAvatar1x}
-            srcSet={myAvatar2x + ' 2x'}
+            srcSet={myAvatar2x + " 2x"}
             alt="Фото Никиты Кошелева"
           />
         </picture>
@@ -19,8 +19,7 @@ const Logo = () => {
         <div className="logo__subtitle">Фронтенд разработчик</div>
       </div>
     </div>
+  );
+};
 
-  )
-}
-
-export default Logo
+export default Logo;

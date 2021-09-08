@@ -33,7 +33,7 @@
     margin-bottom: 0.5rem;
   }
 
-  @media(--screen-md) {
+  @media (--screen-md) {
     padding-bottom: 0.813rem;
     display: inline-block;
 

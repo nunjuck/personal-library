@@ -1,8 +1,8 @@
-import React from 'react'
-import {BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import Header from './components/Header'
-import Library from './components/Library'
+import Header from "./components/Header";
+import Library from "./components/Library";
 
 const App = () => {
   return (
@@ -13,7 +13,7 @@ const App = () => {
         <Route path="/" component={Library} />
       </Switch>
     </Router>
-  )
-}
+  );
+};
 
-export default App
+export default App;

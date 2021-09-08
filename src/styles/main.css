@@ -1,17 +1,17 @@
-@import './media';
-@import './_variables';
-@import './fonts';
-@import './global';
+@import "./media";
+@import "./_variables";
+@import "./fonts";
+@import "./global";
 
 /* Libraries */
-@import 'normalize.css';
+@import "normalize.css";
 
 /* Helpers */
-@import './helpers/visually-hidden';
+@import "./helpers/visually-hidden";
 
 /* Components */
-@import '../components/Header/style';
-@import '../components/Logo/style';
-@import '../components/Library/style';
-@import '../components/Books/style';
-@import '../components/Book/style';
+@import "../components/Header/style";
+@import "../components/Logo/style";
+@import "../components/Library/style";
+@import "../components/Books/style";
+@import "../components/Book/style";
