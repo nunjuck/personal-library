@@ -1,6 +1,7 @@
 .book-card {
   position: relative;
   padding-bottom: 2rem;
+  margin-bottom: 1rem;
   max-width: 320px;
 }
 
@@ -8,6 +9,7 @@
   img {
     width: 170px;
     height: 237px;
+    outline: 1px solid #F2F2F2;
   }
 }
 

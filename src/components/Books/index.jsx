@@ -1,42 +1,59 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useCallback } from "react";
+import { useQuery } from "react-query";
 
+import { fetchRequest } from "../../api/notion";
 import Book from "../Book";
+
 const Books = ({ name }) => {
-  const [books, setBooks] = useState([]);
-
-  useEffect(() => {
-    const fetchBooks = async (nameCategory = null) => {
-      const filterOnCategory = {
-        filter: {
-          property: "Category",
-          select: {
-            equals: nameCategory,
-          },
+  const fetchBooks = useCallback(async () => {
+    const filterOnCategory = {
+      filter: {
+        property: "Category",
+        select: {
+          equals: name,
         },
-      };
-      const response = await fetch(
-        `/notion/v1/databases/${process.env.REACT_APP_NOTION_DATABASE}/query`,
-        {
-          method: "POST",
-          headers: {
-            Authorization: `Bearer ${process.env.REACT_APP_NOTION_TOKEN}`,
-            "Notion-Version": "2021-08-16",
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(nameCategory ? filterOnCategory : {}),
-        }
-      );
-
-      const libraryData = await response.json();
-      setBooks(libraryData.results);
+      },
     };
 
-    fetchBooks(name);
+    const response = await fetchRequest.post(
+      `/notion/v1/databases/${process.env.REACT_APP_NOTION_DATABASE}/query`,
+      name ? filterOnCategory : {}
+    );
+
+    const libraryData = await response.json();
+
+    if (!response.ok) {
+      throw new Error(libraryData.message);
+    } else {
+      return libraryData.results;
+    }
   }, [name]);
+
+  const { isLoading, data, isError, error } = useQuery(
+    name || "all",
+    fetchBooks
+  );
+
+  if (isLoading) {
+    return (
+      <div className="skeleton-list">
+        <div className="skeleton-books"></div>
+        <div className="skeleton-books"></div>
+        <div className="skeleton-books"></div>
+        <div className="skeleton-books"></div>
+        <div className="skeleton-books"></div>
+      </div>
+    );
+  }
+
+  if (isError) {
+    return <span>Error: {error.message}</span>;
+  }
 
   return (
     <div className="books">
-      {books.map((book) => {
+      {/* <div className="skeleton-books"></div> */}
+      {data.map((book) => {
         return (
           <Book
             cover={book.properties.Cover.files[0].file.url}

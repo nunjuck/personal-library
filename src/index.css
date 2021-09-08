@@ -430,7 +430,112 @@ template {
     margin-bottom: 6.25rem
 }
   }
-/* Catalog */
+.books {
+  padding-bottom: 3rem;
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(1, 1fr)
+}
+@media (min-width: 576px) {
+.books {
+    grid-template-columns: repeat(3, 1fr)
+}
+  }
+@media (min-width: 768px) {
+.books {
+    grid-template-columns: repeat(4, 1fr)
+}
+  }
+@media (min-width: 992px) {
+.books {
+    grid-template-columns: repeat(6, 1fr)
+}
+  }
+/* Skeleton Screen */
+.skeleton-list {
+  margin-top: 2rem;
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(1, 1fr)
+}
+@media (min-width: 576px) {
+.skeleton-list {
+    grid-template-columns: repeat(3, 1fr)
+}
+  }
+@media (min-width: 768px) {
+.skeleton-list {
+    grid-template-columns: repeat(4, 1fr)
+}
+  }
+@media (min-width: 992px) {
+.skeleton-list {
+    grid-template-columns: repeat(6, 1fr)
+}
+  }
+.skeleton-books {
+  width: 170px;
+  height: 350px;
+  cursor: progress;
+  background:
+    linear-gradient(0.25turn, transparent, #fff, transparent),
+    linear-gradient(#eee, #eee),
+    linear-gradient(#eee, #eee),
+    linear-gradient(#eee, #eee);
+  background-repeat: no-repeat;
+  background-size: 170px 350px, 170px 240px, 170px 30px, 170px 30px;
+  background-position: -170px 0, 0 0, 0px 250px, 0px 290px;
+  animation: loading-books 1.5s infinite;
+}
+@keyframes loading-books {
+  to {
+    background-position: 170px 0, 0 0, 0px 250px, 0px 290px;
+  }
+}
+.book-card {
+  position: relative;
+  padding-bottom: 2rem;
+  margin-bottom: 1rem;
+  max-width: 320px;
+}
+.book-card__cover img {
+    width: 170px;
+    height: 237px;
+    outline: 1px solid #F2F2F2;
+  }
+.book-card__name {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: var(--color-text-base);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-height: 1.4;
+}
+.book-card__availability {
+  display: block;
+  margin-top: 0.6rem;
+  color: var(--color-text-danger);
+}
+.book-card__availability--yes {
+    color: var(--color-text-access);
+  }
+.book-card__copy {
+  border: 0;
+  background-color: transparent;
+  padding: 0;
+  color: var(--color-text-link);
+  position: absolute;
+  bottom: 0;
+  cursor: pointer
+}
+@media (min-width: 768px) {
+.book-card__copy {
+    font-size: 0.875rem;
+    text-align: left
+}
+  }
 .catalog {
   position: relative;
 }
@@ -487,66 +592,24 @@ template {
     border-bottom: 1px solid #000
 }
   }
-.books {
-  padding-bottom: 3rem;
-  display: grid;
-  grid-gap: 30px;
-  grid-template-columns: repeat(1, 1fr)
+/* Skeleton Screen */
+.skeleton-nav {
+  --height: 50px;
+
+  border-radius: 8px;
+  width: 100%;
+  height: var(--height);
+  cursor: progress;
+  background:
+    linear-gradient(0.24turn, transparent, #fff, transparent),
+    linear-gradient(#eee, #eee);
+  background-repeat: no-repeat;
+  background-size: 500px 250px, 100% var(--height);
+  background-position: -100% 0, 0 0;
+  animation: loading-category 1s infinite;
 }
-@media (min-width: 576px) {
-.books {
-    grid-template-columns: repeat(3, 1fr)
-}
+@keyframes loading-category {
+  to {
+    background-position: 100% 0, 0 0;
   }
-@media (min-width: 768px) {
-.books {
-    grid-template-columns: repeat(4, 1fr)
 }
-  }
-@media (min-width: 992px) {
-.books {
-    grid-template-columns: repeat(6, 1fr)
-}
-  }
-.book-card {
-  position: relative;
-  padding-bottom: 2rem;
-  max-width: 320px;
-}
-.book-card__cover img {
-    width: 170px;
-    height: 237px;
-  }
-.book-card__name {
-  margin-top: 1rem;
-  font-size: 1rem;
-  color: var(--color-text-base);
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  line-height: 1.4;
-}
-.book-card__availability {
-  display: block;
-  margin-top: 0.6rem;
-  color: var(--color-text-danger);
-}
-.book-card__availability--yes {
-    color: var(--color-text-access);
-  }
-.book-card__copy {
-  border: 0;
-  background-color: transparent;
-  padding: 0;
-  color: var(--color-text-link);
-  position: absolute;
-  bottom: 0;
-  cursor: pointer
-}
-@media (min-width: 768px) {
-.book-card__copy {
-    font-size: 0.875rem;
-    text-align: left
-}
-  }
