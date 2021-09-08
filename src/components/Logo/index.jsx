@@ -1,6 +1,6 @@
 import React from "react";
-import myAvatar1x from '../images/my-avatar.png'
-import myAvatar2x from '../images/my-avatar@2x.png'
+import myAvatar1x from '../../images/my-avatar.png'
+import myAvatar2x from '../../images/my-avatar@2x.png'
 
 const Logo = () => {
   return (

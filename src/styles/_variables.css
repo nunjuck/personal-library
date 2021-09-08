@@ -2,6 +2,10 @@
   /* Colors */
   --color-bg-light: #C6D5DD;
   --color-text-base: #333333;
+  --color-text-access: #7eae4e;
+  --color-text-danger: #ae544e;
+  --color-text-link: #336fee;
+  --color-text-nav: #000;
 
   /* Fonts */;
   --font-size-base: 16px

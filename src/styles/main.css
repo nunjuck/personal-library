@@ -10,6 +10,8 @@
 @import './helpers/visually-hidden';
 
 /* Components */
-@import './components/header';
-@import './components/logo';
-@import './components/library';
+@import '../components/Header/style';
+@import '../components/Logo/style';
+@import '../components/Library/style';
+@import '../components/Books/style';
+@import '../components/Book/style';

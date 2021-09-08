@@ -1,0 +1,47 @@
+.book-card {
+  position: relative;
+  padding-bottom: 2rem;
+  max-width: 320px;
+}
+
+.book-card__cover {
+  img {
+    width: 170px;
+    height: 237px;
+  }
+}
+
+.book-card__name {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: var(--color-text-base);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-height: 1.4;
+}
+
+.book-card__availability {
+  display: block;
+  margin-top: 0.6rem;
+  color: var(--color-text-danger);
+  &--yes {
+    color: var(--color-text-access);
+  }
+}
+
+.book-card__copy {
+  border: 0;
+  background-color: transparent;
+  padding: 0;
+  color: var(--color-text-link);
+  position: absolute;
+  bottom: 0;
+  cursor: pointer;
+
+  @media (--screen-md) {
+    font-size: 0.875rem;
+    text-align: left;
+  }
+}

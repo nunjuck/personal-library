@@ -5,6 +5,7 @@ module.exports = function(app) {
     '/notion',
     createProxyMiddleware({
       target: 'https://api.notion.com/',
+      pathRewrite: { '^/notion/': '' },
       changeOrigin: true,
     })
   );

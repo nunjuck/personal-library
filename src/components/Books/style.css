@@ -1,0 +1,18 @@
+.books {
+  padding-bottom: 3rem;
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(1, 1fr);
+
+  @media (--screen-sm) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (--screen-md) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (--screen-lg) {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
