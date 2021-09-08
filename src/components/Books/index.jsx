@@ -25,12 +25,11 @@ const Books = ({ name }) => {
       })
 
       const libraryData = await response.json()
-      console.log(libraryData);
       setBooks(libraryData.results)
     }
 
     fetchBooks(name)
-  }, [ name])
+  }, [name])
 
   return (
     <div className="books">

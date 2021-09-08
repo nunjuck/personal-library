@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.21.1",
     "http-proxy-middleware": "^2.0.1",
+    "lint-staged": "^11.1.2",
     "normalize.css": "^8.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -25,13 +26,18 @@
     "build-js": "react-scripts build",
     "build": "npm-run-all build:css build-js",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint-staged": "lint-staged"
   },
+  "pre-commit": "eslint",
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "rules": {
+      "semi":"error"
+    }
   },
   "browserslist": {
     "production": [
@@ -58,5 +64,8 @@
     "postcss-nested": "^5.0.6",
     "postcss-preset-env": "^6.7.0"
   },
-  "proxy": "https://api.notion.com/"
+  "proxy": "https://api.notion.com/",
+  "lint-staged": {
+    "*.js": "eslint"
+  }
 }
