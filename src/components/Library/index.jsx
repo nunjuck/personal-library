@@ -10,7 +10,7 @@ const Library = () => {
   return (
     <div className="container">
       <h1 className="title-page">Моя библиотека книг</h1>
-      <Categories/>
+      <Categories />
       <Books name={name} />
     </div>
   );
