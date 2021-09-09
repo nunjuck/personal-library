@@ -7,7 +7,7 @@ import { fetchRequest } from "../../api/notion";
 const Categories = () => {
   const fetchDataBaseInfo = async () => {
     const response = await fetchRequest.get(
-      `/notion/v1/databases/${process.env.REACT_APP_NOTION_DATABASE}`
+      `/v1/databases/${process.env.REACT_APP_NOTION_DATABASE}`
     );
 
     const dataBaseInfo = await response.json();
