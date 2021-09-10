@@ -69,6 +69,10 @@
   },
   "proxy": "https://api.notion.com/",
   "lint-staged": {
-    "*.js": "eslint"
+    "*.js": "eslint",
+    "*.jsx": "eslint",
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --write"
+    ]
   }
 }
