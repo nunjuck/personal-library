@@ -73,10 +73,11 @@
 
 .catalog__link--active {
   opacity: 1;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #000;
 
   @media (--screen-lg) {
     padding-bottom: 1.03rem;
-    border-bottom: 1px solid #000;
   }
 }
 
