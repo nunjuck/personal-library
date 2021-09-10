@@ -42,6 +42,7 @@ const Books = ({ name }) => {
         <div className="skeleton-books"></div>
         <div className="skeleton-books"></div>
         <div className="skeleton-books"></div>
+        <div className="skeleton-books"></div>
       </div>
     );
   }
