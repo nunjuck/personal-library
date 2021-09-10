@@ -427,7 +427,7 @@ template {
     font-size: 2.5rem;
     line-height: 1.5;
     margin-top: 8.75rem;
-    margin-bottom: 6.25rem
+    margin-bottom: 5.25rem
 }
   }
 .books {
@@ -451,6 +451,17 @@ template {
     grid-template-columns: repeat(6, 1fr)
 }
   }
+.books:empty {
+    display: block;
+    width: 100%;
+    position: relative
+  }
+.books:empty:before {
+      content: "Я пока не добавил книги в эту категорию.";
+      position: absolute;
+      width: 100%;
+
+    }
 /* Skeleton Screen */
 .skeleton-list {
   margin-top: 2rem;

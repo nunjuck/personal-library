@@ -15,6 +15,18 @@
   @media (--screen-lg) {
     grid-template-columns: repeat(6, 1fr);
   }
+
+  &:empty {
+    display: block;
+    width: 100%;
+    position: relative;
+    &:before {
+      content: "Я пока не добавил книги в эту категорию.";
+      position: absolute;
+      width: 100%;
+
+    }
+  }
 }
 
 /* Skeleton Screen */
