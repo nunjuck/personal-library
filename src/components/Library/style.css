@@ -1,14 +1,34 @@
-/* Title */
-.title-page {
+.page-info {
   margin-top: 3rem;
   margin-bottom: 2rem;
+
+  .link {
+    display: inline-block;
+    margin-left: 0.4rem;
+  }
+
+  @media (--screen-md) {
+    margin-top: 8.75rem;
+    margin-bottom: 5.25rem;
+  }
+}
+
+.page-info__title {
   font-size: 1.6rem;
   line-height: 1.3;
+  font-weight: normal;
+  margin: 0;
 
   @media (--screen-md) {
     font-size: 2.5rem;
     line-height: 1.5;
-    margin-top: 8.75rem;
-    margin-bottom: 5.25rem;
+  }
+}
+
+.page-info__subtitle {
+  font-size: 1rem;
+
+  @media (--screen-md) {
+    font-size: 1.25rem;
   }
 }

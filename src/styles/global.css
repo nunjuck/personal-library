@@ -26,3 +26,7 @@ h6 {
   margin: 0;
   font-weight: bold;
 }
+
+.link {
+  color: var(--color-text-link);
+}
