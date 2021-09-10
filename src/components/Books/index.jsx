@@ -15,10 +15,6 @@ const Books = ({ name }) => {
       },
     };
 
-
-      console.log(123);
-      /
-
     const response = await fetchRequest.post(
       `/v1/databases/${process.env.REACT_APP_NOTION_DATABASE}/query`,
       name ? filterOnCategory : {}
