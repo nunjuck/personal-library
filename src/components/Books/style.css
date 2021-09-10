@@ -53,10 +53,8 @@
   width: 170px;
   height: 350px;
   cursor: progress;
-  background:
-    linear-gradient(0.25turn, transparent, #fff, transparent),
-    linear-gradient(#eee, #eee),
-    linear-gradient(#eee, #eee),
+  background: linear-gradient(0.25turn, transparent, #fff, transparent),
+    linear-gradient(#eee, #eee), linear-gradient(#eee, #eee),
     linear-gradient(#eee, #eee);
   background-repeat: no-repeat;
   background-size: 170px 350px, 170px 240px, 170px 30px, 170px 30px;
