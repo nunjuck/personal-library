@@ -53,7 +53,6 @@ const Books = ({ name }) => {
 
   return (
     <div className="books">
-      {/* <div className="skeleton-books"></div> */}
       {data.map((book) => {
         return (
           <Book
