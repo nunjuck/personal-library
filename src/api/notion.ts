@@ -1,7 +1,7 @@
 import { notionApi } from "../config/constants";
 
 export class fetchRequest {
-  static async get(path) {
+  static async get(path: string) {
     return await fetch(path, {
       method: "GET",
       headers: {
@@ -12,7 +12,7 @@ export class fetchRequest {
     });
   }
 
-  static async post(path, data) {
+  static async post(path: string, data: object) {
     return await fetch(path, {
       method: "POST",
       headers: {

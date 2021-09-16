@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { useQuery } from "react-query";
 
 import { fetchRequest } from "../../api/notion";
+import { Category } from "../../types/category";
 
 const Categories = () => {
   const fetchDataBaseInfo = async () => {
@@ -19,17 +20,14 @@ const Categories = () => {
     }
   };
 
-  const { isLoading, data, isError, error } = useQuery(
-    "categories",
-    fetchDataBaseInfo
-  );
+  const categories = useQuery<[], Error>("categories", fetchDataBaseInfo);
 
-  if (isLoading) {
+  if (categories.isLoading) {
     return <div className="skeleton-nav"></div>;
   }
 
-  if (isError) {
-    return <span>Error: {error.message}</span>;
+  if (categories.isError) {
+    return <span>Error: {categories.error.message}</span>;
   }
 
   return (
@@ -45,19 +43,20 @@ const Categories = () => {
             Все книги
           </NavLink>
         </li>
-        {data.map((category) => {
-          return (
-            <li className="catalog__item" key={category.id}>
-              <NavLink
-                to={`/category/${category.name}`}
-                className="catalog__link"
-                activeClassName="catalog__link--active"
-              >
-                {category.name}
-              </NavLink>
-            </li>
-          );
-        })}
+        {categories.data &&
+          categories.data.map((category: Category) => {
+            return (
+              <li className="catalog__item" key={category.id}>
+                <NavLink
+                  to={`/category/${category.name}`}
+                  className="catalog__link"
+                  activeClassName="catalog__link--active"
+                >
+                  {category.name}
+                </NavLink>
+              </li>
+            );
+          })}
       </ul>
     </nav>
   );
