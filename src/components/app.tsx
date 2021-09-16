@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
 // import { ReactQueryDevtools } from "react-query/devtools";
 
-import Header from "./components/Header";
-import Library from "./components/Library";
+import Header from "./Header";
+import Library from "./Library";
 
 const queryClient = new QueryClient();
 

@@ -1,8 +1,11 @@
 import React from "react";
 
-const Book = (props) => {
-  const copySign = (data, event) => {
-    const th = event.target;
+const Book = (props: any) => {
+  const copySign = (
+    data: string,
+    event: React.FormEvent<HTMLButtonElement>
+  ) => {
+    const th = event.currentTarget;
     const name = th.innerText;
     navigator.clipboard
       .writeText(data)

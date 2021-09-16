@@ -5,7 +5,7 @@ import Books from "../Books";
 import Categories from "../Categories";
 
 const Library = () => {
-  const { name } = useParams();
+  const { name } = useParams<{ name: string }>();
 
   return (
     <div className="container">

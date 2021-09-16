@@ -4,7 +4,7 @@ import { useQuery } from "react-query";
 import { fetchRequest } from "../../api/notion";
 import Book from "../Book";
 
-const Books = ({ name }) => {
+const Books = ({ name }: { name: string }) => {
   const fetchBooks = useCallback(async () => {
     const filterOnCategory = {
       filter: {
@@ -29,12 +29,9 @@ const Books = ({ name }) => {
     }
   }, [name]);
 
-  const { isLoading, data, isError, error } = useQuery(
-    name || "all",
-    fetchBooks
-  );
+  const books = useQuery<[], Error>(name || "all", fetchBooks);
 
-  if (isLoading) {
+  if (books.isLoading) {
     return (
       <div className="skeleton-list">
         <div className="skeleton-books"></div>
@@ -47,22 +44,23 @@ const Books = ({ name }) => {
     );
   }
 
-  if (isError) {
-    return <span>Error: {error.message}</span>;
+  if (books.isError) {
+    return <span>Error: {books.error.message}</span>;
   }
 
   return (
     <div className="books">
-      {data.map((book) => {
-        return (
-          <Book
-            cover={book.properties.Cover.files[0].file.url}
-            title={book.properties.Name.title[0].text.content}
-            availability={book.properties.Available.checkbox}
-            key={book.id}
-          />
-        );
-      })}
+      {books.data &&
+        books.data.map((book: any) => {
+          return (
+            <Book
+              cover={book.properties.Cover.files[0].file.url}
+              title={book.properties.Name.title[0].text.content}
+              availability={book.properties.Available.checkbox}
+              key={book.id}
+            />
+          );
+        })}
     </div>
   );
 };
