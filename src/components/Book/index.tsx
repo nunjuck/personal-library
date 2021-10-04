@@ -1,4 +1,5 @@
 import React from "react";
+import LazyImage from "../helpers/LazyImage";
 
 const Book = (props: any) => {
   const copySign = (
@@ -26,7 +27,13 @@ const Book = (props: any) => {
   return (
     <article className="book-card">
       <div className="book-card__cover">
-        <img src={props.cover} alt={`Обложка книги ${props.title}`} />
+        <LazyImage
+          image={{
+            alt: `Обложка книги ${props.title}`,
+            src: props.cover,
+            height: 237,
+          }}
+        />
       </div>
       <h2 className="book-card__name">{props.title}</h2>
       <span
