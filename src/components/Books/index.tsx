@@ -2,6 +2,7 @@ import React, { useCallback } from "react";
 import { useQuery } from "react-query";
 
 import { fetchRequest } from "../../api/notion";
+import { BookType } from "../../types/book";
 import Book from "../Book";
 
 const Books = ({ name }: { name: string }) => {
@@ -25,9 +26,21 @@ const Books = ({ name }: { name: string }) => {
     if (!response.ok) {
       throw new Error(libraryData.message);
     } else {
-      return libraryData.results;
+      return generateArrayBooks(libraryData.results);
     }
   }, [name]);
+
+  const generateArrayBooks = (results: any) => {
+    let arr = results.map((result: any) => {
+      return {
+        id: result.properties.Name.title[0].text.content,
+        cover: result.properties.Cover.files[0].file.url,
+        title: result.properties.Name.title[0].text.content,
+        availability: result.properties.Available.checkbox,
+      };
+    });
+    return arr;
+  };
 
   const books = useQuery<[], Error>(name || "all", fetchBooks);
 
@@ -51,12 +64,12 @@ const Books = ({ name }: { name: string }) => {
   return (
     <div className="books">
       {books.data &&
-        books.data.map((book: any) => {
+        books.data.map((book: BookType) => {
           return (
             <Book
-              cover={book.properties.Cover.files[0].file.url}
-              title={book.properties.Name.title[0].text.content}
-              availability={book.properties.Available.checkbox}
+              cover={book.cover}
+              title={book.title}
+              availability={book.availability}
               key={book.id}
             />
           );
