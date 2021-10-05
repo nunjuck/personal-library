@@ -70,6 +70,7 @@ const Books = ({ name }: { name: string }) => {
               cover={book.cover}
               title={book.title}
               availability={book.availability}
+              id={book.id}
               key={book.id}
             />
           );

@@ -1,7 +1,8 @@
 import React from "react";
+import { BookType } from "../../types/book";
 import LazyImage from "../helpers/LazyImage";
 
-const Book = (props: any) => {
+const Book = ({ cover, title, availability }: BookType) => {
   const copySign = (
     data: string,
     event: React.FormEvent<HTMLButtonElement>
@@ -29,25 +30,25 @@ const Book = (props: any) => {
       <div className="book-card__cover">
         <LazyImage
           image={{
-            alt: `Обложка книги ${props.title}`,
-            src: props.cover,
+            alt: `Обложка книги ${title}`,
+            src: cover,
             height: 237,
           }}
         />
       </div>
-      <h2 className="book-card__name">{props.title}</h2>
+      <h2 className="book-card__name">{title}</h2>
       <span
         className={`book-card__availability ${
-          props.availability ? "book-card__availability--yes" : ""
+          availability ? "book-card__availability--yes" : ""
         }`}
       >
-        {props.availability ? "Доступна" : "Занята"}
+        {availability ? "Доступна" : "Занята"}
       </span>
       <button
         className="book-card__copy"
         type="button"
         onClick={(event) => {
-          copySign(props.title, event);
+          copySign(title, event);
         }}
       >
         Скопировать название
