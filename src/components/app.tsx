@@ -14,7 +14,7 @@ const App = () => {
       <Router>
         <Header />
         <Switch>
-          <Route path="/category/:name" component={Library} />
+          <Route path="/category/:nameCategory" component={Library} />
           <Route path="/" component={Library} />
         </Switch>
         {/* <ReactQueryDevtools initialIsOpen /> */}

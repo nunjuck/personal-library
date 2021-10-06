@@ -5,20 +5,20 @@ import { fetchRequest } from "../../api/notion";
 import { BookType } from "../../types/book";
 import Book from "../Book";
 
-const Books = ({ name }: { name: string }) => {
+const Books = ({ category }: { category: string }) => {
   const fetchBooks = useCallback(async () => {
     const filterOnCategory = {
       filter: {
         property: "Category",
         select: {
-          equals: name,
+          equals: category,
         },
       },
     };
 
     const response = await fetchRequest.post(
       `/v1/databases/${process.env.REACT_APP_NOTION_DATABASE}/query`,
-      name ? filterOnCategory : {}
+      category ? filterOnCategory : {}
     );
 
     const libraryData = await response.json();
@@ -28,7 +28,7 @@ const Books = ({ name }: { name: string }) => {
     } else {
       return generateArrayBooks(libraryData.results);
     }
-  }, [name]);
+  }, [category]);
 
   const generateArrayBooks = (results: any) => {
     let arr = results.map((result: any) => {
@@ -42,7 +42,7 @@ const Books = ({ name }: { name: string }) => {
     return arr;
   };
 
-  const books = useQuery<[], Error>(name || "all", fetchBooks);
+  const books = useQuery<[], Error>(category || "all", fetchBooks);
 
   if (books.isLoading) {
     return (
