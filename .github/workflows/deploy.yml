@@ -35,14 +35,14 @@ jobs:
       - name: Install dependencies 👨🏻‍💻
         run: npm ci
 
+      - name: Run tests
+        run: npm run test
+
       - name: Run build task
         run: npm run build
         env:
           REACT_APP_NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           REACT_APP_NOTION_DATABASE: ${{ secrets.NOTION_DATABASE }}
-
-      - name: Run tests
-        run: npm run test
 
       - name: Deploy to Server
         uses: easingthemes/ssh-deploy@main
