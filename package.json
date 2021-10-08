@@ -29,6 +29,7 @@
   },
   "husky": {
     "hooks": {
+      "pre-push": "npm run test:changed",
       "pre-commit": "lint-staged"
     }
   },
