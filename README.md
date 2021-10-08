@@ -1,7 +1,6 @@
 # Personal library
 
-[![](https://github.com/nunjuck/personal-library/workflows/ESLint/badge.svg)](https://github.com/nunjuck/personal-library/actions?query=workflow%3AESLint)
-[![](https://github.com/nunjuck/personal-library/workflows/Deploy/badge.svg)](https://github.com/nunjuck/personal-library/actions?query=workflow%3ADeploy)
+[![](https://github.com/nunjuck/personal-library/workflows/Deploy/badge.svg)](https://github.com/nunjuck/personal-library/actions?query=workflow%3Aci)
 
 ## Settings commintlint
 
