@@ -24,6 +24,7 @@ Object {
         </div>
         <h2
           class="book-card__name"
+          title="Чистый код"
         >
           Чистый код
         </h2>
@@ -67,6 +68,7 @@ Object {
       </div>
       <h2
         class="book-card__name"
+        title="Чистый код"
       >
         Чистый код
       </h2>
@@ -123,6 +125,7 @@ Object {
   "getByTitle": [Function],
   "name": <h2
     class="book-card__name"
+    title="Чистый код"
   >
     Чистый код
   </h2>,

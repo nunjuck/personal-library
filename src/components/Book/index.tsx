@@ -36,7 +36,9 @@ const Book = ({ cover, title, availability }: BookType) => {
           }}
         />
       </div>
-      <h2 className="book-card__name">{title}</h2>
+      <h2 className="book-card__name" title={title}>
+        {title}
+      </h2>
       <span
         className={`book-card__availability ${
           availability ? "book-card__availability--yes" : ""
