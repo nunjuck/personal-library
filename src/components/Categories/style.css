@@ -89,8 +89,7 @@
   width: 100%;
   height: var(--height);
   cursor: progress;
-  background: linear-gradient(0.24turn, transparent, #fff, transparent),
-    linear-gradient(#eee, #eee);
+  background: linear-gradient(0.24turn, transparent, #fff, transparent), linear-gradient(#eee, #eee);
   background-repeat: no-repeat;
   background-size: 500px 250px, 100% var(--height);
   background-position: -100% 0, 0 0;

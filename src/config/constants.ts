@@ -1,4 +1,4 @@
 // API Notion
 export const notionApi = {
-  version: "2021-08-16",
-};
+  version: '2021-08-16'
+}

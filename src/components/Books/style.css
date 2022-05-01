@@ -22,7 +22,7 @@
     width: 100%;
     position: relative;
     &:before {
-      content: "Я пока не добавил книги в эту категорию.";
+      content: 'Я пока не добавил книги в эту категорию.';
       position: absolute;
       width: 100%;
     }
@@ -53,9 +53,8 @@
   width: 170px;
   height: 350px;
   cursor: progress;
-  background: linear-gradient(0.25turn, transparent, #fff, transparent),
-    linear-gradient(#eee, #eee), linear-gradient(#eee, #eee),
-    linear-gradient(#eee, #eee);
+  background: linear-gradient(0.25turn, transparent, #fff, transparent), linear-gradient(#eee, #eee),
+    linear-gradient(#eee, #eee), linear-gradient(#eee, #eee);
   background-repeat: no-repeat;
   background-size: 170px 350px, 170px 240px, 170px 30px, 170px 30px;
   background-position: -170px 0, 0 0, 0px 250px, 0px 290px;

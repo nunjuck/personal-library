@@ -1,6 +1,6 @@
 export type BookType = {
-  id: string;
-  cover: string;
-  title: string;
-  availability: boolean;
-};
+  id: string
+  cover: string
+  title: string
+  availability: boolean
+}

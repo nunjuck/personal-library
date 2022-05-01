@@ -1,5 +1,4 @@
-import React from "react";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 const LazyImage = ({ image }: any) => (
   <LazyLoadImage
@@ -7,8 +6,8 @@ const LazyImage = ({ image }: any) => (
     height={image.height}
     src={image.src} // use normal <img> attributes as props
     placeholderSrc={image.src}
-    effect="blur"
+    effect='blur'
   />
-);
+)
 
-export default LazyImage;
+export default LazyImage
