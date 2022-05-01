@@ -2,6 +2,19 @@
   "name": "library.koshelev.dev",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "build:css": "postcss src/styles/main.css -o src/index.css",
+    "watch:css": "postcss src/styles/main.css -o src/index.css -w",
+    "start": "npm-run-all -p watch:css start-js",
+    "start-js": "react-scripts start",
+    "build-js": "react-scripts build",
+    "build": "npm-run-all build:css build-js",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "eslint": "eslint src/**/*.{js,jsx}",
+    "lint-staged": "lint-staged",
+    "prepare": "husky install"
+  },
   "dependencies": {
     "@notionhq/client": "^0.3.1",
     "@testing-library/jest-dom": "^5.14.1",
@@ -32,19 +45,6 @@
       "pre-push": "npm run test:changed",
       "pre-commit": "lint-staged"
     }
-  },
-  "scripts": {
-    "build:css": "postcss src/styles/main.css -o src/index.css",
-    "watch:css": "postcss src/styles/main.css -o src/index.css -w",
-    "start": "npm-run-all -p watch:css start-js",
-    "start-js": "react-scripts start",
-    "build-js": "react-scripts build",
-    "build": "npm-run-all build:css build-js",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "eslint": "eslint src/**/*.{js,jsx}",
-    "lint-staged": "lint-staged",
-    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
