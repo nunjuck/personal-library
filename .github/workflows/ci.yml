@@ -24,13 +24,13 @@ jobs:
           node-version: ${{ matrix.node }}
           check-latest: true
 
-      - name: Cache node_modules 📦
-        uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+      # - name: Cache node_modules 📦
+      #   uses: actions/cache@v2
+      #   with:
+      #     path: ~/.yarn
+      #     key: ${{ runner.os }}-node-${{ hashFiles('**/yarn-lock.json') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-node-
 
       - name: Install dependencies 👨🏻‍💻
         run: npm ci
@@ -48,9 +48,9 @@ jobs:
         uses: easingthemes/ssh-deploy@main
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
-          ARGS: "-rltgoDzvO --delete"
-          SOURCE: "build/"
+          ARGS: '-rltgoDzvO --delete'
+          SOURCE: 'build/'
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           TARGET: ${{ secrets.REMOTE_TARGET }}
-          EXCLUDE: "/build/, /node_modules/"
+          EXCLUDE: '/build/, /node_modules/'
