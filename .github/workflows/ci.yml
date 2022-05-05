@@ -24,13 +24,13 @@ jobs:
           node-version: ${{ matrix.node }}
           check-latest: true
 
-      # - name: Cache node_modules 📦
-      #   uses: actions/cache@v2
-      #   with:
-      #     path: ~/.yarn
-      #     key: ${{ runner.os }}-node-${{ hashFiles('**/yarn-lock.json') }}
-      #     restore-keys: |
-      #       ${{ runner.os }}-node-
+      - name: Cache node_modules 📦
+        uses: actions/cache@v2
+        with:
+          path: ~/.yarn
+          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
 
       - name: Install dependencies 👨🏻‍💻
         run: yarn
