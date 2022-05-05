@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { QueryClient, QueryClientProvider } from 'react-query'
 // import { ReactQueryDevtools } from "react-query/devtools";
 
-import Header from './Header'
+import { Header } from './Header'
 import Library from './Library'
 
 const queryClient = new QueryClient()
