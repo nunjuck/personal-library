@@ -35,6 +35,9 @@ jobs:
       - name: Install dependencies 👨🏻‍💻
         run: yarn
 
+      - name: Run test task
+        run: yarn test:no-watch
+
       - name: Run build task
         run: yarn build
         env:
