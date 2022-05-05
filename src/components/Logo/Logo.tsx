@@ -1,7 +1,9 @@
+import { FC } from 'react'
+
 import myAvatar1x from '../../images/my-avatar.png'
 import myAvatar2x from '../../images/my-avatar@2x.png'
 
-const Logo = () => {
+export const Logo: FC = () => {
   return (
     <div className='logo'>
       <div className='avatar'>
@@ -16,5 +18,3 @@ const Logo = () => {
     </div>
   )
 }
-
-export default Logo

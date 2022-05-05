@@ -81,7 +81,10 @@
   },
   "proxy": "https://api.notion.com/",
   "lint-staged": {
-    "*.{ts,tsx}": "yarn lint:fix && yarn test:upgrade",
+    "*.{ts,tsx}": [
+      "yarn lint:fix",
+      "yarn test:upgrade"
+    ],
     "*.{js,jsx,ts,tsx,css,md,json}": "yarn format"
   }
 }

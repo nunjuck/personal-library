@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react'
 
-import { Header } from './index'
+import { Logo } from './Logo'
 
-describe('<Header>', () => {
+describe('<Logo>', () => {
   it('renders correctly', () => {
-    const view = render(<Header />)
+    const view = render(<Logo />)
     expect(view).toMatchSnapshot()
   })
 })
