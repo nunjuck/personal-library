@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom'
 
 import Books from '../Books'
-import Categories from '../Categories'
+import { Categories } from '../Categories'
 
 const Library = () => {
   const { nameCategory } = useParams<{ nameCategory: string }>()

@@ -1,10 +1,11 @@
+import { FC } from 'react'
 import { NavLink } from 'react-router-dom'
 import { useQuery } from 'react-query'
 
 import { fetchRequest } from '../../api/notion'
 import { Category } from '../../types/category'
 
-const Categories = () => {
+export const Categories: FC = () => {
   const fetchDataBaseInfo = async () => {
     const response = await fetchRequest.get(`/v1/databases/${process.env.REACT_APP_NOTION_DATABASE}`)
 
@@ -53,5 +54,3 @@ const Categories = () => {
     </nav>
   )
 }
-
-export default Categories

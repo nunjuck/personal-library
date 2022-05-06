@@ -26,15 +26,15 @@ Object {
               </picture>
             </div>
             <div
-              class="logo__info"
+              class="logoInfo"
             >
               <div
-                class="logo__title"
+                class="logoTitle"
               >
                 Никита Кошелев
               </div>
               <div
-                class="logo__subtitle"
+                class="logoSubtitle"
               >
                 Фронтенд разработчик
               </div>
@@ -66,15 +66,15 @@ Object {
             </picture>
           </div>
           <div
-            class="logo__info"
+            class="logoInfo"
           >
             <div
-              class="logo__title"
+              class="logoTitle"
             >
               Никита Кошелев
             </div>
             <div
-              class="logo__subtitle"
+              class="logoSubtitle"
             >
               Фронтенд разработчик
             </div>
