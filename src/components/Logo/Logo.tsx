@@ -14,7 +14,7 @@ export const Logo: FC = () => {
         </picture>
       </div>
       <div className={classes.logoInfo}>
-        <div className={classes.logoTitle}>Никита Кошелев</div>
+        <div className={classes.title}>Никита Кошелев</div>
         <div className={classes.logoSubtitle}>Фронтенд разработчик</div>
       </div>
     </div>

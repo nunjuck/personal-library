@@ -3,7 +3,7 @@
 @import './styles/global';
 
 /* Libraries */
-@import 'normalize.css';
+/* @import 'normalize.css'; */
 
 /* Helpers */
 @import './styles/helpers/visually-hidden';

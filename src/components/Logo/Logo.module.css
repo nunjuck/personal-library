@@ -3,21 +3,17 @@
   align-items: center;
 }
 
-.logoTitle {
+.title {
   font-size: 1rem;
   font-weight: bold;
   line-height: 1.3;
-}
 
-@custom-media --small-device (max-width: 1000px);
-
-@media (--small-device) {
-  .logoTitle {
+  @media (--screen-md) {
     font-size: 1.375rem;
   }
 }
 
-.logoSubtitle {
+.logo-subtitle {
   margin-top: 0.338rem;
   line-height: 1.2;
   font-size: 0.875rem;

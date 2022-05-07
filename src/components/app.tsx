@@ -12,10 +12,10 @@ const App = () => {
     <QueryClientProvider client={queryClient}>
       <Router>
         <Header />
-        {/* <Switch>
+        <Switch>
           <Route path='/category/:nameCategory' component={Library} />
           <Route path='/' component={Library} />
-        </Switch> */}
+        </Switch>
         {/* <ReactQueryDevtools initialIsOpen /> */}
       </Router>
     </QueryClientProvider>

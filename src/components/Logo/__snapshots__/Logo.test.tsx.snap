@@ -23,7 +23,7 @@ Object {
           class="logoInfo"
         >
           <div
-            class="logoTitle"
+            class="title"
           >
             Никита Кошелев
           </div>
@@ -55,7 +55,7 @@ Object {
         class="logoInfo"
       >
         <div
-          class="logoTitle"
+          class="title"
         >
           Никита Кошелев
         </div>
