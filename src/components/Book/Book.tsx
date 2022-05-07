@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { FC } from 'react'
 
 import { BookType } from '../../types/book'
 import LazyImage from '../helpers/LazyImage'
 
-const Book = ({ cover, title, availability }: BookType) => {
+import classes from './Book.module.css'
+
+export const Book: FC<BookType> = ({ cover, title, availability }) => {
   const copySign = (data: string, event: React.FormEvent<HTMLButtonElement>) => {
     const th = event.currentTarget
     const name = th.innerText
@@ -22,8 +24,8 @@ const Book = ({ cover, title, availability }: BookType) => {
   }
 
   return (
-    <article className='book-card'>
-      <div className='book-card__cover'>
+    <article className={classes.card}>
+      <div className={classes.cover}>
         <LazyImage
           image={{
             alt: `Обложка книги ${title}`,
@@ -32,14 +34,14 @@ const Book = ({ cover, title, availability }: BookType) => {
           }}
         />
       </div>
-      <h2 className='book-card__name' title={title}>
+      <h2 className={classes.name} title={title}>
         {title}
       </h2>
-      <span className={`book-card__availability ${availability ? 'book-card__availability--yes' : ''}`}>
+      <span className={`${classes.availability} ${availability ? classes.availabilityYes : ''}`}>
         {availability ? 'Доступна' : 'Занята'}
       </span>
       <button
-        className='book-card__copy'
+        className={classes.copy}
         type='button'
         onClick={(event) => {
           copySign(title, event)
@@ -50,5 +52,3 @@ const Book = ({ cover, title, availability }: BookType) => {
     </article>
   )
 }
-
-export default Book

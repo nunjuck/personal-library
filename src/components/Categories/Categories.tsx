@@ -5,6 +5,8 @@ import { useQuery } from 'react-query'
 import { fetchRequest } from '../../api/notion'
 import { Category } from '../../types/category'
 
+import classes from './Categories.module.css'
+
 export const Categories: FC = () => {
   const fetchDataBaseInfo = async () => {
     const response = await fetchRequest.get(`/v1/databases/${process.env.REACT_APP_NOTION_DATABASE}`)
@@ -21,7 +23,7 @@ export const Categories: FC = () => {
   const categories = useQuery<[], Error>('categories', fetchDataBaseInfo)
 
   if (categories.isLoading) {
-    return <div className='skeleton-nav'></div>
+    return <div className={classes.skeletonNav}></div>
   }
 
   if (categories.isError) {
@@ -29,21 +31,21 @@ export const Categories: FC = () => {
   }
 
   return (
-    <nav className='catalog'>
-      <ul className='catalog__list'>
-        <li className='catalog__item'>
-          <NavLink exact to={'/'} className='catalog__link' activeClassName='catalog__link--active'>
+    <nav className={classes.catalog}>
+      <ul className={classes.list}>
+        <li className={classes.item}>
+          <NavLink exact to={'/'} className={classes.link} activeClassName={classes.linkActive}>
             Все книги
           </NavLink>
         </li>
         {categories.data &&
           categories.data.map((category: Category) => {
             return (
-              <li className='catalog__item' key={category.id}>
+              <li className={classes.item} key={category.id}>
                 <NavLink
                   to={`/category/${category.name}`}
-                  className='catalog__link'
-                  activeClassName='catalog__link--active'
+                  className={classes.link}
+                  activeClassName={classes.linkActive}
                 >
                   {category.name}
                 </NavLink>

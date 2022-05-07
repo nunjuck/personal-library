@@ -1,11 +1,11 @@
-.book-card {
+.card {
   position: relative;
   padding-bottom: 2rem;
   margin-bottom: 1rem;
   max-width: 320px;
 }
 
-.book-card__cover {
+.cover {
   img {
     width: 170px;
     height: 237px;
@@ -13,7 +13,7 @@
   }
 }
 
-.book-card__name {
+.name {
   margin-top: 1rem;
   font-size: 1rem;
   color: var(--color-text-base);
@@ -25,16 +25,17 @@
   font-weight: normal;
 }
 
-.book-card__availability {
+.availability {
   display: block;
   margin-top: 0.6rem;
   color: var(--color-text-danger);
-  &--yes {
-    color: var(--color-text-access);
-  }
 }
 
-.book-card__copy {
+.availabilityYes {
+  color: var(--color-text-access);
+}
+
+.copy {
   border: 0;
   background-color: transparent;
   padding: 0;

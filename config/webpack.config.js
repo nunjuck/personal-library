@@ -27,6 +27,7 @@ const ForkTsCheckerWebpackPlugin =
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 
 const createEnvironmentHash = require('./webpack/persistentCache/createEnvironmentHash')
+const { features } = require('process')
 
 // Source maps are resource heavy and can cause out of memory issue for large source files.
 const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== 'false'
@@ -130,7 +131,10 @@ module.exports = function (webpackEnv) {
                       autoprefixer: {
                         flexbox: 'no-2009'
                       },
-                      stage: 3
+                      stage: 1,
+                      features: {
+                        'nesting-rules': true
+                      }
                     }
                   ],
                   [
@@ -139,8 +143,7 @@ module.exports = function (webpackEnv) {
                       importFrom: `${paths.appPath}/src/styles/media.css`
                     }
                   ],
-                  'postcss-nesting',
-                  'postcss-camel-case',
+                  'postcss-nested',
                   // Adds PostCSS Normalize as the reset css with default options,
                   // so that it honors browserslist config in package.json
                   // which in turn let's users customize the target behavior as per their needs.

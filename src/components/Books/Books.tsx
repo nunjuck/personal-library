@@ -1,11 +1,17 @@
-import { useCallback } from 'react'
+import { FC, useCallback } from 'react'
 import { useQuery } from 'react-query'
 
 import { fetchRequest } from '../../api/notion'
 import { BookType } from '../../types/book'
-import Book from '../Book'
+import { Book } from '../Book'
 
-const Books = ({ category }: { category: string }) => {
+import classes from './Books.module.css'
+
+interface IBookProps {
+  category: string
+}
+
+export const Books: FC<IBookProps> = ({ category }) => {
   const fetchBooks = useCallback(async () => {
     const filterOnCategory = {
       filter: {
@@ -46,13 +52,13 @@ const Books = ({ category }: { category: string }) => {
 
   if (books.isLoading) {
     return (
-      <div className='skeleton-list'>
-        <div className='skeleton-books'></div>
-        <div className='skeleton-books'></div>
-        <div className='skeleton-books'></div>
-        <div className='skeleton-books'></div>
-        <div className='skeleton-books'></div>
-        <div className='skeleton-books'></div>
+      <div className={classes.skeletonList}>
+        <div className={classes.skeletonBooks}></div>
+        <div className={classes.skeletonBooks}></div>
+        <div className={classes.skeletonBooks}></div>
+        <div className={classes.skeletonBooks}></div>
+        <div className={classes.skeletonBooks}></div>
+        <div className={classes.skeletonBooks}></div>
       </div>
     )
   }
@@ -62,7 +68,7 @@ const Books = ({ category }: { category: string }) => {
   }
 
   return (
-    <div className='books'>
+    <div className={classes.books}>
       {books.data &&
         books.data.map((book: BookType) => {
           return (
@@ -72,5 +78,3 @@ const Books = ({ category }: { category: string }) => {
     </div>
   )
 }
-
-export default Books
