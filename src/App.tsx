@@ -1,12 +1,7 @@
 import { FC } from 'react'
-import Header from './components/sections/Header/Header'
 
 const App: FC = () => {
-  return (
-    <div id="app">
-      <Header />
-    </div>
-  )
+  return <h1>Hello World</h1>
 }
 
 export default App
