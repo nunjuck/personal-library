@@ -1,4 +1,4 @@
-# Start template Vite + React + Typescript
+# Персональная библиотека книг
 
 В проекте настроена работа:
 
